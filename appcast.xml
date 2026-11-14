@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Yureisha update feed (Sparkle 2 appcast) for the direct-download build. The Mac App Store build never reads it.
+
+  STUB: no release has been published. scripts/appcast.py (run by .github/workflows/publish.yml) inserts one <item>
+  per release directly after the ITEMS marker, newest first. Do not hand-edit published items.
+
+  Placeholders the operator resolves before the first release (docs/publishing.md):
+    - SPARKLE_ED_PUBLIC_KEY: the app's Info.plist SUPublicEDKey; the matching private key is the
+      SPARKLE_ED_PRIVATE_KEY repo secret and signs each enclosure (sparkle:edSignature).
+    - MIN_MACOS_TBA: sparkle:minimumSystemVersion, once the minimum macOS version is decided.
+  Apple silicon only: every item carries sparkle:hardwareRequirements="arm64", so Intel Macs are never offered an update.
+  Feed URL for SUFeedURL: https://raw.githubusercontent.com/yureisha-io/releases/main/appcast.xml
+  (or a yureisha.io URL later; changing SUFeedURL after shipping needs a release that points at the new one).
+-->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Yureisha</title>
+    <link>https://github.com/yureisha-io/releases/raw/main/appcast.xml</link>
+    <description>Updates for the direct-download build of Yureisha.</description>
+    <language>en</language>
+    <!-- ITEMS: newest first; scripts/appcast.py inserts below this line -->
+    <!--
+    Example of a published item (shape only; nothing here is real):
+    <item>
+      <title>Version X.Y.Z</title>
+      <pubDate>Mon, 01 Jan 2027 00:00:00 +0000</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>X.Y.Z</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>MIN_MACOS_TBA</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <sparkle:releaseNotesLink>https://github.com/yureisha-io/releases/releases/tag/vX.Y.Z</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/yureisha-io/releases/releases/download/vX.Y.Z/Yureisha.dmg"
+                 length="0" type="application/octet-stream"
+                 sparkle:edSignature="ED_SIGNATURE_PLACEHOLDER" />
+    </item>
+    -->
+  </channel>
+</rss>
