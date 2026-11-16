@@ -2,8 +2,8 @@
 
 All notable changes to the direct-download build of Yureisha are listed here, newest first.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions follow
-[Semantic Versioning](https://semver.org/). Each version links to its GitHub Release, which carries the signed,
-notarized `Yureisha.dmg` and its SHA-256.
+[Semantic Versioning](https://semver.org/). Once releases begin, each version will link to its GitHub Release, which will carry
+the signed, notarized `Yureisha.dmg` and its SHA-256.
 
 ## [Unreleased]
 

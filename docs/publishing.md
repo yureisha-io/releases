@@ -3,9 +3,9 @@
 > **Draft pipeline.** Nothing below has run yet. Before the first release the operator adds the secrets, copies the
 > source-repo workflow into the app repo, and makes the decisions listed at the end.
 
-Yureisha ships two ways (operator decision, 2026-11-14): a **Mac App Store** build, which updates through the App
-Store, and a **direct download** (Developer ID signed, notarized and stapled DMG) linked from
-[yureisha.io/download](https://yureisha.io/download/). This repo is the public home of the direct download.
+Yureisha is planned to ship two ways (operator decision, 2026-11-14; nothing has shipped yet): a **Mac App Store** build, which would update through the App
+Store, and a **direct download** (Developer ID signed, notarized and stapled DMG) to be linked from
+yureisha.io/download once the site is live. This repo is the public home of the direct download.
 Everything is **Apple silicon (arm64) only**, and every CI job runs on GitHub's `macos-15` runner, which is arm64.
 Intel (`macos-13`, `*-large`) and Linux runners are never used.
 

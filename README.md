@@ -1,26 +1,27 @@
 # Yureisha releases
 
-The public release channel for the **direct download** of [Yureisha](https://yureisha.io), the native macOS app by
-[Black Mesa Lab](https://blackmesalab.com). Yureisha is also on the Mac App Store; App Store builds update through
-the App Store and are not published here.
+The planned public release channel for the **direct download** of Yureisha, a native macOS app by Black Mesa Lab
+that is still in development. A Mac App Store build is also planned; if it ships, it will update through the App Store
+and will not be published here.
 
-> **Status: draft.** No build has been published yet. The pipeline in this repo needs the operator to add signing,
-> notarization and (optionally) Sparkle secrets before the first release. See [docs/publishing.md](docs/publishing.md).
+> **Status: draft. Yureisha has not been released.** No build has been published here or on the Mac App Store, and
+> the website is not live yet. The pipeline in this repo needs the operator to add signing, notarization and
+> (optionally) Sparkle secrets before the first release. See [docs/publishing.md](docs/publishing.md).
 
 ## Download
 
-- **Latest:** <https://github.com/yureisha-io/releases/releases/latest/download/Yureisha.dmg>
-  (the same file [yureisha.io/download](https://yureisha.io/download/) links to)
-- **All versions and release notes:** [Releases](https://github.com/yureisha-io/releases/releases) and
-  [CHANGELOG.md](CHANGELOG.md)
+There is nothing to download yet. Once the first version is published, it will be at
+<https://github.com/yureisha-io/releases/releases/latest/download/Yureisha.dmg>, with every version and its release
+notes under [Releases](https://github.com/yureisha-io/releases/releases) and in [CHANGELOG.md](CHANGELOG.md).
 
-**Requires a Mac with Apple silicon.** Yureisha is built for arm64 only; Intel Macs are not supported.
+**Will require a Mac with Apple silicon.** Yureisha is built for arm64 only; Intel Macs are not supported.
 Minimum macOS version: to be announced.
 
 ## Verifying a download
 
-Every disk image is signed with Black Mesa Lab's Developer ID, notarized by Apple and stapled. Each release lists the
-SHA-256 of `Yureisha.dmg` and attaches it as `Yureisha.dmg.sha256`.
+When releases begin, every disk image will be signed with Black Mesa Lab's Developer ID, notarized by Apple and
+stapled, and the publish workflow refuses to release one that isn't. Each release will list the SHA-256 of
+`Yureisha.dmg` and attach it as `Yureisha.dmg.sha256`.
 
 ```sh
 shasum -a 256 -c Yureisha.dmg.sha256          # matches the published checksum
@@ -40,5 +41,4 @@ xcrun stapler validate Yureisha.dmg            # "The validate action worked!"
 | `.github/workflows/publish.yml` | Verifies a signed, notarized DMG, creates the GitHub Release and updates `appcast.xml`. |
 | `scripts/appcast.py` | Inserts a release into `appcast.xml` (Python standard library only). |
 
-Security reports: see [SECURITY.md](https://github.com/yureisha-io/.github/blob/main/SECURITY.md). Help:
-[yureisha.io/support](https://yureisha.io/support/).
+Security reports: see [SECURITY.md](https://github.com/yureisha-io/.github/blob/main/SECURITY.md).
