@@ -20,7 +20,7 @@ Minimum macOS version: to be announced.
 ## Verifying a download
 
 When releases begin, every disk image will be signed with Black Mesa Lab's Developer ID, notarized by Apple and
-stapled, and the publish workflow refuses to release one that isn't. Each release will list the SHA-256 of
+stapled, and the publish script refuses to release one that isn't. Each release will list the SHA-256 of
 `Yureisha.dmg` and attach it as `Yureisha.dmg.sha256`.
 
 ```sh
@@ -37,8 +37,8 @@ xcrun stapler validate Yureisha.dmg            # "The validate action worked!"
 | `CHANGELOG.md` | Human-readable history of every direct-download release. |
 | `docs/release-notes-template.md` | The template each release's notes start from. |
 | `docs/publishing.md` | How a release gets from the app repo to here, the secrets it needs and the open decisions. |
-| `docs/source-repo-workflow.yml` | The build → sign → notarize → hand-off workflow for the (private) app repo, to copy there later. |
-| `.github/workflows/publish.yml` | Verifies a signed, notarized DMG, creates the GitHub Release and updates `appcast.xml`. |
+| `scripts/publish.sh` | Verifies a signed, notarized DMG, creates the GitHub Release and opens the `appcast.xml` PR. Runs locally on Darwin arm64; there is no CI on GitHub. |
+| `AGENTS.md` | The containers-only and no-CI-on-GitHub rules. |
 | `scripts/appcast.py` | Inserts a release into `appcast.xml` (Python standard library only). |
 
 Security reports: see [SECURITY.md](https://github.com/yureisha-io/.github/blob/main/SECURITY.md).

@@ -10,7 +10,7 @@ the signed, notarized `Yureisha.dmg` and its SHA-256.
 Nothing published yet.
 
 <!--
-Template for a new entry (the publish workflow does not edit this file; add the entry in the release PR):
+Template for a new entry (scripts/publish.sh does not edit this file; add the entry in the release PR):
 
 ## [1.0.0] - YYYY-MM-DD
 

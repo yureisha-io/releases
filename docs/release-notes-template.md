@@ -1,5 +1,5 @@
 <!--
-Release notes template. The publish workflow uses this file when a release is dispatched without notes:
+Release notes template. scripts/publish.sh uses this file for each release:
 {{VERSION}}, {{BUILD}}, {{SHA256}} and {{MIN_MACOS}} are filled in. Write in the Yureisha voice (BRAND.md §3):
 state first, then what changed, then what's needed from the reader. No exclamation marks, no emoji, no prices, no dates
 that aren't the release date.
